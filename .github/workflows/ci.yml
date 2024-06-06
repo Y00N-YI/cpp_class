@@ -29,8 +29,8 @@ jobs:
         cd build
         cmake ..
         make
-        sudo cp googlemock/gtest/libgtest.a /usr/lib/
-        sudo cp googlemock/gtest/libgtest_main.a /usr/lib/
+        sudo cp lib/libgtest.a /usr/lib/
+        sudo cp lib/libgtest_main.a /usr/lib/
 
     - name: Configure CMake
       run: cmake .
