@@ -21,10 +21,13 @@ jobs:
 
     - name: Build Google Test
       run: |
-        cd /usr/src/gtest
-        sudo cmake CMakeLists.txt
-        sudo make
-        sudo cp *.a /usr/lib
+        cd /usr/src/googletest
+        mkdir -p build
+        cd build
+        cmake ..
+        make
+        sudo cp googletest/lib/libgtest.a /usr/lib/
+        sudo cp googletest/lib/libgtest_main.a /usr/lib/
 
     - name: Configure CMake
       run: cmake .
