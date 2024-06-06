@@ -33,13 +33,11 @@ jobs:
         sudo cp lib/libgtest_main.a /usr/lib/
 
     - name: Configure CMake
-      working-directory: ${{ github.workspace }}
-      run: cmake -S . -B build
+      run: |
+        cmake -S . -B build
 
     - name: Build
-      working-directory: ${{ github.workspace }}
       run: cmake --build build
 
     - name: Run tests
-      working-directory: ${{ github.workspace }}
       run: ./build/calculator_test
